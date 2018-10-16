@@ -23,7 +23,6 @@ class TempleCardsViewController : UIViewController {
     // MARK: - Actions
     @IBAction func show(_ sender: Any) {
         collectionView.reloadData()
-        print("should reload")
     }
 }
 
