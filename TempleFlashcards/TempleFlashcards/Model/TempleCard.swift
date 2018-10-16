@@ -10,12 +10,16 @@ import Foundation
 
 struct TempleCard {
     // MARK: - Properties
-    var name: String
-    var imageUrl: String
+    var filename: String = "default.url"
+    var name: String = "Temple Name"
     
     // MARK: - Init
-    init(name: String, imageUrl: String) {
+    init() {
+        // By default this builds a Temple card
+    }
+    
+    init(filename: String, name: String) {
+        self.filename = filename
         self.name = name
-        self.imageUrl = imageUrl
     }
 }
