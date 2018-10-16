@@ -16,6 +16,9 @@ class TempleCardView : UIView {
     
     // MARK: - Computed Properties
     var cornerRadius: CGFloat { return bounds.width * 0.05 }
+    var borderStrokeWidth : CGFloat { return 0.5 }
+    var borderMargin : CGFloat { return 3.0 }
+
     
     // MARK: - Helpers
     private func popContext() {
@@ -52,6 +55,8 @@ class TempleCardView : UIView {
     // MARK: - Drawing
     override func draw(_ rect: CGRect) {
         drawBaseCard()
+        
+        drawBorderSquare()
     }
     
     private func drawBaseCard() {
@@ -61,6 +66,24 @@ class TempleCardView : UIView {
         _ = pushContext()
         UIColor.white.setFill()
         UIRectFill(bounds)
+        popContext()
+    }
+    
+    private func drawBorderSquare() {
+        let square = UIBezierPath()
+        let width = bounds.width - 4
+        let height = bounds.height - 4
+        let borderColor : UIColor = UIColor.yellow
+        
+        _ = pushContext()
+        borderColor.setStroke()
+        square.lineWidth = borderStrokeWidth
+        square.move(to: CGPoint(x: borderMargin, y: borderMargin))
+        square.addLine(to: CGPoint(x: width, y: borderMargin))
+        square.addLine(to: CGPoint(x: width, y: height))
+        square.addLine(to: CGPoint(x: borderMargin, y: height))
+        square.close()
+        square.stroke()
         popContext()
     }
 }
