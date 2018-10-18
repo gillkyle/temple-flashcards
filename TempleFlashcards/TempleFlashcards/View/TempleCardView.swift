@@ -16,8 +16,8 @@ class TempleCardView : UIView {
     
     // MARK: - Computed Properties
     var cornerRadius: CGFloat { return bounds.width * 0.05 }
-    var borderStrokeWidth : CGFloat { return 0.5 }
-    var borderMargin : CGFloat { return 3.0 }
+    var borderStrokeWidth : CGFloat { return 1.5 }
+    var borderMargin : CGFloat { return 4.0 }
 
     
     // MARK: - Helpers
@@ -56,6 +56,7 @@ class TempleCardView : UIView {
     override func draw(_ rect: CGRect) {
         drawBaseCard()
         
+        drawCenterImage()
         drawBorderSquare()
     }
     
@@ -85,5 +86,19 @@ class TempleCardView : UIView {
         square.close()
         square.stroke()
         popContext()
+    }
+    
+    private func drawCenterImage() {
+        guard let templeImage = UIImage(named: card.filename) else {
+            return
+        }
+        
+        let width = bounds.width - (borderMargin * 4)
+        let height = bounds.height - (borderMargin * 4)
+        let templeImageRect = CGRect(x: borderMargin + 3.0,
+                                   y: borderMargin + 3.0,
+                                   width: width,
+                                   height: height)
+        templeImage.draw(in: templeImageRect)
     }
 }

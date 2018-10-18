@@ -20,11 +20,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHs-f4-Qd2">
                                 <rect key="frame" x="0.0" y="343" width="667" height="32"/>
                                 <items>
-                                    <barButtonItem title="Show" id="q0V-3h-xI4">
+                                    <barButtonItem title="Toggle Study" id="q0V-3h-xI4">
                                         <connections>
                                             <action selector="show:" destination="BYZ-38-t0r" id="m6J-Rx-tDd"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Reset" id="e9o-dt-l6a"/>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="etF-VH-elT">
@@ -33,10 +34,11 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="eBb-Tk-7ZK"/>
                                 </constraints>
+                                <sections/>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E4u-yy-875">
                                 <rect key="frame" x="0.0" y="0.0" width="419" height="343"/>
-                                <color key="backgroundColor" red="0.94906872997390668" green="0.9999958872795105" blue="0.96482799643718953" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.75994442065928403" green="0.88878973127295047" blue="0.9999958872795105" alpha="0.2266160102739726" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YLx-7c-Jop">
                                     <size key="itemSize" width="150" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -75,6 +77,13 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="wd8-Qb-T84"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9w-GX-8Wo">
+                                <rect key="frame" x="285" y="349" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
