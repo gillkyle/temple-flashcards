@@ -17,13 +17,30 @@ class TempleCardsViewController : UIViewController {
     
     // MARK: - Properties
     private var cards = TempleDeck()
+    
+    // MARK: - Shared Singleton
+    class State {
+        static var isStudyMode = true
+        static var correctGuesses = 0
+        static var totalGuesses = 0
+    }
         
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var correctGuesses: UILabel!
+    @IBOutlet weak var totalGuesses: UILabel!
     
     // MARK: - Actions
-    @IBAction func show(_ sender: Any) {
-        collectionView.reloadData()
+    @IBAction func toggleStudy(_ sender: Any) {
+        State.isStudyMode = !State.isStudyMode
     }
+    @IBAction func resetState(_ sender: Any) {
+        State.correctGuesses = 0
+        State.totalGuesses = 0
+        correctGuesses.text = "0"
+        totalGuesses.text = "0"
+    }
+    
+    
 }
 
 // MARK: - Collection view data source

@@ -100,5 +100,7 @@ class TempleCardView : UIView {
                                    width: width,
                                    height: height)
         templeImage.draw(in: templeImageRect)
+        print(TempleCardsViewController.State.isStudyMode)
+        
     }
 }
