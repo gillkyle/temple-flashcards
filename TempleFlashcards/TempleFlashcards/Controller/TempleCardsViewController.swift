@@ -36,6 +36,7 @@ class TempleCardsViewController : UIViewController {
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
     @IBOutlet weak var button4: UIButton!
+    @IBOutlet weak var resetButton: UIBarButtonItem!
     
     // MARK: - Actions
     @IBAction func toggleStudy(_ sender: Any) {
@@ -55,6 +56,8 @@ class TempleCardsViewController : UIViewController {
                        animations: {
                         self.view.layoutIfNeeded()
         })
+        
+        toggleReset()
     
     }
     
@@ -78,6 +81,14 @@ class TempleCardsViewController : UIViewController {
         button2.setTitle(State.namesArr[1], for: .normal)
         button3.setTitle(State.namesArr[2], for: .normal)
         button4.setTitle(State.namesArr[3], for: .normal)
+    }
+    
+    private func toggleReset() {
+        if resetButton.isEnabled == true {
+            resetButton.isEnabled = false
+        } else {
+            resetButton.isEnabled = true
+        }
     }
     
     

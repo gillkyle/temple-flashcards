@@ -173,6 +173,7 @@
                         <outlet property="button4" destination="UXC-nD-XTh" id="7uN-RO-3LQ"/>
                         <outlet property="collectionView" destination="E4u-yy-875" id="PXD-1N-bmw"/>
                         <outlet property="correctGuesses" destination="5Ge-Zm-rRY" id="ZmJ-qF-fJp"/>
+                        <outlet property="resetButton" destination="e9o-dt-l6a" id="YKE-zH-aGD"/>
                         <outlet property="selectedImage" destination="Owe-4n-S8s" id="Bs6-n3-feA"/>
                         <outlet property="sidebarWidthConstraint" destination="fNr-tZ-n0z" id="5JY-XX-GOD"/>
                         <outlet property="totalGuesses" destination="5b4-26-i0a" id="lDZ-4w-r2U"/>
