@@ -57,8 +57,8 @@ class TempleCardView : UIView {
         drawBaseCard()
         
         drawCenterImage()
-        drawBorderSquare()
         drawTempleName()
+        drawBorderSquare()
     }
     
     private func drawBaseCard() {
@@ -101,13 +101,25 @@ class TempleCardView : UIView {
                                    width: width,
                                    height: height)
         templeImage.draw(in: templeImageRect)
-        print(TempleCardsViewController.State.isStudyMode)
         
     }
     
     private func drawTempleName() {
+        let square = UIBezierPath()
+        let width = bounds.width - 4
+        let fillColor : UIColor = UIColor.white
+        
+        _ = pushContext()
+        fillColor.setFill()
+        square.move(to: CGPoint(x: borderMargin, y: 72.0))
+        square.addLine(to: CGPoint(x: width, y: 72.0))
+        square.addLine(to: CGPoint(x: width, y: 90.0))
+        square.addLine(to: CGPoint(x: borderMargin, y: 90.0))
+        square.close()
+        square.fill()
         if TempleCardsViewController.State.isStudyMode {
-            card.name.draw(at: CGPoint(x: bounds.width / 4, y: bounds.height / 2))
+            card.name.draw(at: CGPoint(x: borderMargin, y: 75.0))
         }
+        popContext()
     }
 }

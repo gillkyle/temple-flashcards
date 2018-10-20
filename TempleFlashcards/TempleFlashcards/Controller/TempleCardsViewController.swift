@@ -20,7 +20,7 @@ class TempleCardsViewController : UIViewController {
     
     // MARK: - Shared Singleton
     class State {
-        static var isStudyMode = false
+        static var isStudyMode = true
         static var correctGuesses = 0
         static var totalGuesses = 0
         static var namesArr: [String] = ["A", "B", "C", "D"]
