@@ -20,7 +20,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHs-f4-Qd2">
                                 <rect key="frame" x="0.0" y="343" width="667" height="32"/>
                                 <items>
-                                    <barButtonItem title="Toggle Study" id="q0V-3h-xI4">
+                                    <barButtonItem title="Study" id="q0V-3h-xI4">
                                         <connections>
                                             <action selector="toggleStudy:" destination="BYZ-38-t0r" id="52i-hS-EjI"/>
                                         </connections>
@@ -119,9 +119,12 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U67-64-sPT">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U67-64-sPT" customClass="SubclassUIButton" customModule="TempleFlashcards" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="163.5" width="224" height="30"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="button1Press:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lQ2-vP-Ytg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkH-cZ-22i">
                                                 <rect key="frame" x="0.0" y="201.5" width="224" height="30"/>
@@ -176,6 +179,7 @@
                         <outlet property="resetButton" destination="e9o-dt-l6a" id="YKE-zH-aGD"/>
                         <outlet property="selectedImage" destination="Owe-4n-S8s" id="Bs6-n3-feA"/>
                         <outlet property="sidebarWidthConstraint" destination="fNr-tZ-n0z" id="5JY-XX-GOD"/>
+                        <outlet property="toggleStudyButton" destination="q0V-3h-xI4" id="M5m-ec-pZG"/>
                         <outlet property="totalGuesses" destination="5b4-26-i0a" id="lDZ-4w-r2U"/>
                     </connections>
                 </viewController>

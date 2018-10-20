@@ -8,6 +8,10 @@
 
 import UIKit
 
+class SubclassUIButton : UIButton {
+    var value: String?
+}
+
 class TempleCardsViewController : UIViewController {
     
     // MARK: - Constants
@@ -32,11 +36,12 @@ class TempleCardsViewController : UIViewController {
     
     @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var sidebarWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button1: SubclassUIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
     @IBOutlet weak var button4: UIButton!
     @IBOutlet weak var resetButton: UIBarButtonItem!
+    @IBOutlet weak var toggleStudyButton: UIBarButtonItem!
     
     // MARK: - Actions
     @IBAction func toggleStudy(_ sender: Any) {
@@ -56,6 +61,11 @@ class TempleCardsViewController : UIViewController {
                        animations: {
                         self.view.layoutIfNeeded()
         })
+        if State.isStudyMode == true {
+            toggleStudyButton.title = "Study"
+        } else {
+            toggleStudyButton.title = "Quiz"
+        }
         
         toggleReset()
     
@@ -67,7 +77,13 @@ class TempleCardsViewController : UIViewController {
         correctGuesses.text = "0"
         totalGuesses.text = "0"
     }
+    @IBAction func button1Press(_ sender: SubclassUIButton) {
+        if let name = sender.value {
+            print(name)
+        }
+    }
     
+    // MARK: - Helper functions
     private func toggleButtons(temple: TempleCard) {
         let correctIndex = Int.random(in: 0...3)
         for i in 0...3 {
@@ -78,6 +94,7 @@ class TempleCardsViewController : UIViewController {
         print(State.namesArr)
         State.namesArr[correctIndex] = temple.name
         button1.setTitle(State.namesArr[0], for: .normal)
+        button1.value = State.namesArr[0]
         button2.setTitle(State.namesArr[1], for: .normal)
         button3.setTitle(State.namesArr[2], for: .normal)
         button4.setTitle(State.namesArr[3], for: .normal)
