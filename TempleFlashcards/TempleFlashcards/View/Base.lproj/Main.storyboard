@@ -126,17 +126,26 @@
                                                     <action selector="button1Press:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lQ2-vP-Ytg"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkH-cZ-22i">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkH-cZ-22i" customClass="SubclassUIButton" customModule="TempleFlashcards" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="201.5" width="224" height="30"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="button2Press:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GQl-nv-mpw"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBv-5v-xJk">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBv-5v-xJk" customClass="SubclassUIButton" customModule="TempleFlashcards" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="239.5" width="224" height="30"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="button3Press:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xjO-2Q-OrH"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXC-nD-XTh">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXC-nD-XTh" customClass="SubclassUIButton" customModule="TempleFlashcards" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="277.5" width="224" height="30"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="button4Press:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zTc-KE-2uF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

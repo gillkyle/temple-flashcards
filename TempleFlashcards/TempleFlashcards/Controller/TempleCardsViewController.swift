@@ -24,10 +24,12 @@ class TempleCardsViewController : UIViewController {
     
     // MARK: - Shared Singleton
     class State {
+        static var selectedCard: TempleCard = TempleCard(filename: "madrid-spain-temple-954939-mobile.jpg", name: "Madrid Spain")
         static var isStudyMode = true
         static var correctGuesses = 0
         static var totalGuesses = 0
         static var namesArr: [String] = ["A", "B", "C", "D"]
+        static var correctNames: Set = [""]
     }
         
     @IBOutlet weak var collectionView: UICollectionView!
@@ -37,9 +39,10 @@ class TempleCardsViewController : UIViewController {
     @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var sidebarWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var button1: SubclassUIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var button4: UIButton!
+    @IBOutlet weak var button2: SubclassUIButton!
+    @IBOutlet weak var button3: SubclassUIButton!
+    @IBOutlet weak var button4: SubclassUIButton!
+    
     @IBOutlet weak var resetButton: UIBarButtonItem!
     @IBOutlet weak var toggleStudyButton: UIBarButtonItem!
     
@@ -79,11 +82,46 @@ class TempleCardsViewController : UIViewController {
     }
     @IBAction func button1Press(_ sender: SubclassUIButton) {
         if let name = sender.value {
-            print(name)
+            checkAnswer(answer: name)
+        }
+    }
+    @IBAction func button2Press(_ sender: SubclassUIButton) {
+        if let name = sender.value {
+            checkAnswer(answer: name)
+        }
+    }
+    @IBAction func button3Press(_ sender: SubclassUIButton) {
+        if let name = sender.value {
+            checkAnswer(answer: name)
+        }
+    }
+    @IBAction func button4Press(_ sender: SubclassUIButton) {
+        if let name = sender.value {
+            checkAnswer(answer: name)
         }
     }
     
     // MARK: - Helper functions
+    private func checkAnswer(answer: String) {
+        print(answer)
+        if State.correctNames.contains(answer) {
+            print("Already got that one right!")
+            return
+        }
+        if answer == State.selectedCard.name {
+            print("Score!")
+            State.correctNames.insert(answer)
+            State.correctGuesses = State.correctGuesses + 1
+            State.totalGuesses = State.totalGuesses + 1
+            correctGuesses.text = String(State.correctGuesses)
+            totalGuesses.text = String(State.totalGuesses)
+        } else {
+            print("Incorrect")
+            State.totalGuesses = State.totalGuesses + 1
+            totalGuesses.text = String(State.totalGuesses)
+        }
+    }
+    
     private func toggleButtons(temple: TempleCard) {
         let correctIndex = Int.random(in: 0...3)
         for i in 0...3 {
@@ -96,8 +134,11 @@ class TempleCardsViewController : UIViewController {
         button1.setTitle(State.namesArr[0], for: .normal)
         button1.value = State.namesArr[0]
         button2.setTitle(State.namesArr[1], for: .normal)
+        button2.value = State.namesArr[1]
         button3.setTitle(State.namesArr[2], for: .normal)
+        button3.value = State.namesArr[2]
         button4.setTitle(State.namesArr[3], for: .normal)
+        button4.value = State.namesArr[3]
     }
     
     private func toggleReset() {
@@ -136,9 +177,9 @@ extension TempleCardsViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let templeCardCell = collectionView.cellForItem(at: indexPath) as? TempleCardCell {
             print(templeCardCell)
-            let temple = cards[indexPath.row]
-            toggleButtons(temple: temple)
-            guard let templeImage = UIImage(named: temple.filename) else {
+            State.selectedCard = cards[indexPath.row]
+            toggleButtons(temple: State.selectedCard)
+            guard let templeImage = UIImage(named: State.selectedCard.filename) else {
                 return
             }
             selectedImage.image = templeImage
