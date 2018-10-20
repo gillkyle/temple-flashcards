@@ -58,6 +58,7 @@ class TempleCardView : UIView {
         
         drawCenterImage()
         drawBorderSquare()
+        drawTempleName()
     }
     
     private func drawBaseCard() {
@@ -102,5 +103,11 @@ class TempleCardView : UIView {
         templeImage.draw(in: templeImageRect)
         print(TempleCardsViewController.State.isStudyMode)
         
+    }
+    
+    private func drawTempleName() {
+        if TempleCardsViewController.State.isStudyMode {
+            card.name.draw(at: CGPoint(x: bounds.width / 4, y: bounds.height / 2))
+        }
     }
 }
