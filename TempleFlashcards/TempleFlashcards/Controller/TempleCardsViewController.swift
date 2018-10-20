@@ -77,6 +77,7 @@ class TempleCardsViewController : UIViewController {
     @IBAction func resetState(_ sender: Any) {
         State.correctGuesses = 0
         State.totalGuesses = 0
+        State.correctNames = [""]
         correctGuesses.text = "0"
         totalGuesses.text = "0"
     }
