@@ -105,9 +105,13 @@ class TempleCardView : UIView {
     }
     
     private func drawTempleName() {
+        if TempleCardsViewController.State.isStudyMode == true {
+            return
+        }
+        
         let square = UIBezierPath()
         let width = bounds.width - 4
-        let fillColor : UIColor = UIColor.white
+        let fillColor : UIColor = UIColor.white.withAlphaComponent(0.75)
         
         _ = pushContext()
         fillColor.setFill()
@@ -117,9 +121,7 @@ class TempleCardView : UIView {
         square.addLine(to: CGPoint(x: borderMargin, y: 90.0))
         square.close()
         square.fill()
-        if TempleCardsViewController.State.isStudyMode {
-            card.name.draw(at: CGPoint(x: borderMargin, y: 75.0))
-        }
+        card.name.draw(at: CGPoint(x: borderMargin + 4.0, y: 75.0))
         popContext()
     }
 }
