@@ -16,7 +16,6 @@
 		274B2FD3216FE98B00B010FE /* TempleCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B2FD2216FE98B00B010FE /* TempleCardCell.swift */; };
 		274B2FD5216FEA0C00B010FE /* TempleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B2FD4216FEA0C00B010FE /* TempleCardView.swift */; };
 		274B2FD7216FEE8800B010FE /* TempleCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B2FD6216FEE8800B010FE /* TempleCardsViewController.swift */; };
-		27A938F2217BDFF40075F154 /* UIButton+value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A938F1217BDFF40075F154 /* UIButton+value.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +49,6 @@
 		274B2FD2216FE98B00B010FE /* TempleCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleCardCell.swift; sourceTree = "<group>"; };
 		274B2FD4216FEA0C00B010FE /* TempleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleCardView.swift; sourceTree = "<group>"; };
 		274B2FD6216FEE8800B010FE /* TempleCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleCardsViewController.swift; sourceTree = "<group>"; };
-		27A938F1217BDFF40075F154 /* UIButton+value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+value.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +131,6 @@
 				274B2F9C216FCE9C00B010FE /* Main.storyboard */,
 				274B2FD2216FE98B00B010FE /* TempleCardCell.swift */,
 				274B2FD4216FEA0C00B010FE /* TempleCardView.swift */,
-				27A938F1217BDFF40075F154 /* UIButton+value.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,7 +274,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27A938F2217BDFF40075F154 /* UIButton+value.swift in Sources */,
 				274B2FD5216FEA0C00B010FE /* TempleCardView.swift in Sources */,
 				274B2FCF216FD07E00B010FE /* TempleDeck.swift in Sources */,
 				274B2F99216FCE9C00B010FE /* AppDelegate.swift in Sources */,

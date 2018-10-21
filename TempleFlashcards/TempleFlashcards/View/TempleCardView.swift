@@ -110,7 +110,7 @@ class TempleCardView : UIView {
         }
         
         let square = UIBezierPath()
-        let width = bounds.width - 4
+        let width = bounds.width - (borderMargin * 2)
         let fillColor : UIColor = UIColor.white.withAlphaComponent(0.75)
         
         _ = pushContext()
@@ -121,7 +121,9 @@ class TempleCardView : UIView {
         square.addLine(to: CGPoint(x: borderMargin, y: 90.0))
         square.close()
         square.fill()
-        card.name.draw(at: CGPoint(x: borderMargin + 4.0, y: 75.0))
+        let textRectangle = CGRect(x: borderMargin + 4.0, y: 75.0, width: width, height: 20)
+        card.name.draw(in: textRectangle)
+//        card.name.draw(at: CGPoint(x: borderMargin + 4.0, y: 75.0))
         popContext()
     }
 }
