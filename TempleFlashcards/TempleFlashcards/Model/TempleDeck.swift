@@ -72,4 +72,8 @@ struct TempleDeck {
     mutating func shuffle() {
         cards.shuffle()
     }
+    
+    mutating func remove(at index: Int) {
+        cards.remove(at: index)
+    }
 }

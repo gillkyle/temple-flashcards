@@ -155,6 +155,12 @@
                                     <constraint firstAttribute="width" constant="240" id="fNr-tZ-n0z"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9N-wo-dAh">
+                                <rect key="frame" x="659" y="359" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -162,6 +168,7 @@
                             <constraint firstItem="XHs-f4-Qd2" firstAttribute="top" secondItem="1aj-UW-hkv" secondAttribute="bottom" id="6Zc-bK-gF1"/>
                             <constraint firstItem="XHs-f4-Qd2" firstAttribute="top" secondItem="E4u-yy-875" secondAttribute="bottom" id="8GP-OE-Ci1"/>
                             <constraint firstItem="1aj-UW-hkv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bxz-OG-9su"/>
+                            <constraint firstItem="n9N-wo-dAh" firstAttribute="trailing" secondItem="XHs-f4-Qd2" secondAttribute="trailing" constant="-8" id="If2-zE-SdY"/>
                             <constraint firstItem="1aj-UW-hkv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JBg-WI-uU2"/>
                             <constraint firstItem="dki-0f-q9A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="283" id="TA2-bc-3mU"/>
                             <constraint firstItem="XHs-f4-Qd2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="WdI-Ub-qkO"/>
@@ -171,6 +178,7 @@
                             <constraint firstItem="dki-0f-q9A" firstAttribute="top" secondItem="E4u-yy-875" secondAttribute="bottom" constant="6" id="oI1-YL-f8C"/>
                             <constraint firstItem="1aj-UW-hkv" firstAttribute="leading" secondItem="E4u-yy-875" secondAttribute="trailing" constant="8" symbolic="YES" id="oNj-4X-LQF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dki-0f-q9A" secondAttribute="trailing" constant="284" id="q0C-vv-0WB"/>
+                            <constraint firstItem="n9N-wo-dAh" firstAttribute="centerY" secondItem="XHs-f4-Qd2" secondAttribute="centerY" id="qdR-bx-6Fd"/>
                             <constraint firstItem="E4u-yy-875" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uRk-HP-MST"/>
                             <constraint firstItem="E4u-yy-875" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uwz-jD-rQX"/>
                             <constraint firstItem="E4u-yy-875" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zSD-ZC-Bg4"/>
@@ -185,6 +193,7 @@
                         <outlet property="button4" destination="UXC-nD-XTh" id="7uN-RO-3LQ"/>
                         <outlet property="collectionView" destination="E4u-yy-875" id="PXD-1N-bmw"/>
                         <outlet property="correctGuesses" destination="5Ge-Zm-rRY" id="ZmJ-qF-fJp"/>
+                        <outlet property="guessMessage" destination="n9N-wo-dAh" id="0li-El-gyN"/>
                         <outlet property="resetButton" destination="e9o-dt-l6a" id="YKE-zH-aGD"/>
                         <outlet property="selectedImage" destination="Owe-4n-S8s" id="Bs6-n3-feA"/>
                         <outlet property="sidebarWidthConstraint" destination="fNr-tZ-n0z" id="5JY-XX-GOD"/>

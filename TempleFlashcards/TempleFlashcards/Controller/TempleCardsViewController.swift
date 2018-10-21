@@ -25,6 +25,7 @@ class TempleCardsViewController : UIViewController {
     // MARK: - Shared Singleton
     class State {
         static var selectedCard: TempleCard = TempleCard(filename: "madrid-spain-temple-954939-mobile.jpg", name: "Madrid Spain")
+        static var selectedIndexPath: IndexPath = IndexPath(row: 0, section: 0)
         static var isStudyMode = true
         static var correctGuesses = 0
         static var totalGuesses = 0
@@ -35,6 +36,7 @@ class TempleCardsViewController : UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var correctGuesses: UILabel!
     @IBOutlet weak var totalGuesses: UILabel!
+    @IBOutlet weak var guessMessage: UILabel!
     
     @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var sidebarWidthConstraint: NSLayoutConstraint!
@@ -71,7 +73,8 @@ class TempleCardsViewController : UIViewController {
         }
         
         toggleReset()
-    
+        collectionView.setNeedsDisplay()
+        collectionView.reloadData()
     }
     
     @IBAction func resetState(_ sender: Any) {
@@ -80,6 +83,8 @@ class TempleCardsViewController : UIViewController {
         State.correctNames = [""]
         correctGuesses.text = "0"
         totalGuesses.text = "0"
+        cards = TempleDeck()
+        collectionView.reloadData()
     }
     @IBAction func button1Press(_ sender: SubclassUIButton) {
         if let name = sender.value {
@@ -107,6 +112,7 @@ class TempleCardsViewController : UIViewController {
         print(answer)
         if State.correctNames.contains(answer) {
             print("Already got that one right!")
+            guessMessage.text = "Already Identified"
             return
         }
         if answer == State.selectedCard.name {
@@ -116,10 +122,14 @@ class TempleCardsViewController : UIViewController {
             State.totalGuesses = State.totalGuesses + 1
             correctGuesses.text = String(State.correctGuesses)
             totalGuesses.text = String(State.totalGuesses)
+            guessMessage.text = "Correct"
+            cards.remove(at: State.selectedIndexPath.row)
+            collectionView.deleteItems(at: [State.selectedIndexPath])
         } else {
             print("Incorrect")
             State.totalGuesses = State.totalGuesses + 1
             totalGuesses.text = String(State.totalGuesses)
+            guessMessage.text = "Incorrect"
         }
     }
     
@@ -178,6 +188,7 @@ extension TempleCardsViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let templeCardCell = collectionView.cellForItem(at: indexPath) as? TempleCardCell {
             print(templeCardCell)
+            State.selectedIndexPath = indexPath
             State.selectedCard = cards[indexPath.row]
             toggleButtons(temple: State.selectedCard)
             guard let templeImage = UIImage(named: State.selectedCard.filename) else {
@@ -185,6 +196,7 @@ extension TempleCardsViewController : UICollectionViewDelegate {
             }
             selectedImage.image = templeImage
         }
+        collectionView.setNeedsDisplay()
     }
 }
 
