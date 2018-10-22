@@ -100,7 +100,9 @@ class TempleCardView : UIView {
                                    y: borderMargin + 3.0,
                                    width: width,
                                    height: height)
+        let templeImageRef = templeImage.cgImage?.cropping(to: templeImageRect)
         templeImage.draw(in: templeImageRect)
+        
         
     }
     

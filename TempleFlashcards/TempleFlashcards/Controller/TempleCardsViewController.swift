@@ -200,8 +200,9 @@ extension TempleCardsViewController : UICollectionViewDelegate {
     }
 }
 
-//extension TempleCardsViewController : UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        // if cellHeight = 100 then cellWidth = imageWidth/imageHeight * 100
-//    }
-//}
+extension TempleCardsViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//         if cellHeight = 100 then cellWidth = imageWidth/imageHeight * 100
+        return CGSize(width: 150.0, height: 100.0)
+    }
+}
