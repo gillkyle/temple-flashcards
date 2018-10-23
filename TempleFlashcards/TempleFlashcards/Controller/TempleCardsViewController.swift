@@ -84,6 +84,7 @@ class TempleCardsViewController : UIViewController {
         correctGuesses.text = "0"
         totalGuesses.text = "0"
         cards = TempleDeck()
+        cards.shuffle()
         collectionView.reloadData()
     }
     @IBAction func button1Press(_ sender: SubclassUIButton) {
@@ -105,6 +106,13 @@ class TempleCardsViewController : UIViewController {
         if let name = sender.value {
             checkAnswer(answer: name)
         }
+    }
+    
+    // MARK: - Overrides
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        cards.shuffle()
+        collectionView.reloadData()
     }
     
     // MARK: - Helper functions
@@ -202,7 +210,11 @@ extension TempleCardsViewController : UICollectionViewDelegate {
 
 extension TempleCardsViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//         if cellHeight = 100 then cellWidth = imageWidth/imageHeight * 100
-        return CGSize(width: 150.0, height: 100.0)
+        let templeImage = UIImage(named: cards[indexPath.row].filename)
+        let width = templeImage?.size.width
+        let height = templeImage?.size.height
+        let templeImageWidth = (width! / height!)  * 100.0
+        
+        return CGSize(width: templeImageWidth, height: 100.0)
     }
 }

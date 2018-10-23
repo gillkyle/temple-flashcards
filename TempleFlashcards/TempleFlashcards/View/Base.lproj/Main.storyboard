@@ -35,7 +35,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E4u-yy-875">
                                 <rect key="frame" x="0.0" y="0.0" width="419" height="343"/>
                                 <color key="backgroundColor" red="0.75994442065928403" green="0.88878973127295047" blue="0.9999958872795105" alpha="0.2266160102739726" colorSpace="custom" customColorSpace="displayP3"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="YLx-7c-Jop">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="YLx-7c-Jop">
                                     <size key="itemSize" width="150" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -50,18 +50,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLK-sv-KJe" customClass="TempleCardView" customModule="TempleFlashcards" customModuleProvider="target">
-                                                    <rect key="frame" x="6" y="2" width="144" height="96"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="HLK-sv-KJe" secondAttribute="height" multiplier="3:2" id="jHV-Ps-IBp"/>
-                                                    </constraints>
                                                 </view>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="HLK-sv-KJe" firstAttribute="centerY" secondItem="xnB-20-NKt" secondAttribute="centerY" id="KIR-ne-Put"/>
-                                            <constraint firstAttribute="bottom" secondItem="HLK-sv-KJe" secondAttribute="bottom" constant="2" id="cqL-Gi-xUg"/>
-                                            <constraint firstAttribute="trailing" secondItem="HLK-sv-KJe" secondAttribute="trailing" id="f7N-Vx-zwZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="HLK-sv-KJe" secondAttribute="bottom" id="Anh-Cz-dEM"/>
+                                            <constraint firstItem="HLK-sv-KJe" firstAttribute="top" secondItem="xnB-20-NKt" secondAttribute="top" id="E4e-f5-Mmn"/>
+                                            <constraint firstAttribute="trailing" secondItem="HLK-sv-KJe" secondAttribute="trailing" id="KiU-DL-Xwv"/>
+                                            <constraint firstItem="HLK-sv-KJe" firstAttribute="leading" secondItem="xnB-20-NKt" secondAttribute="leading" id="YZp-gc-pko"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="templeCardView" destination="HLK-sv-KJe" id="IoX-sR-0Ee"/>
@@ -162,7 +160,6 @@
                         <constraints>
                             <constraint firstItem="XHs-f4-Qd2" firstAttribute="top" secondItem="E4u-yy-875" secondAttribute="bottom" id="0bU-8k-iZ2"/>
                             <constraint firstItem="XHs-f4-Qd2" firstAttribute="top" secondItem="1aj-UW-hkv" secondAttribute="bottom" id="6Zc-bK-gF1"/>
-                            <constraint firstItem="XHs-f4-Qd2" firstAttribute="top" secondItem="E4u-yy-875" secondAttribute="bottom" id="8GP-OE-Ci1"/>
                             <constraint firstItem="1aj-UW-hkv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bxz-OG-9su"/>
                             <constraint firstItem="n9N-wo-dAh" firstAttribute="trailing" secondItem="XHs-f4-Qd2" secondAttribute="trailing" constant="-8" id="If2-zE-SdY"/>
                             <constraint firstItem="1aj-UW-hkv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JBg-WI-uU2"/>
@@ -171,11 +168,9 @@
                             <constraint firstItem="XHs-f4-Qd2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="a7x-Sl-819"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dki-0f-q9A" secondAttribute="bottom" constant="5.5" id="dV6-0L-LHq"/>
                             <constraint firstItem="XHs-f4-Qd2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gF7-a4-fTi"/>
-                            <constraint firstItem="dki-0f-q9A" firstAttribute="top" secondItem="E4u-yy-875" secondAttribute="bottom" constant="6" id="oI1-YL-f8C"/>
                             <constraint firstItem="1aj-UW-hkv" firstAttribute="leading" secondItem="E4u-yy-875" secondAttribute="trailing" constant="8" symbolic="YES" id="oNj-4X-LQF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dki-0f-q9A" secondAttribute="trailing" constant="284" id="q0C-vv-0WB"/>
                             <constraint firstItem="n9N-wo-dAh" firstAttribute="centerY" secondItem="XHs-f4-Qd2" secondAttribute="centerY" id="qdR-bx-6Fd"/>
-                            <constraint firstItem="E4u-yy-875" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uRk-HP-MST"/>
                             <constraint firstItem="E4u-yy-875" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uwz-jD-rQX"/>
                             <constraint firstItem="E4u-yy-875" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zSD-ZC-Bg4"/>
                         </constraints>
