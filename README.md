@@ -12,7 +12,6 @@ Animation of the quiz mode sidebar works smoothly and easily.
 
 Layout constraints still gave me warnings even when trying to boil down layout elements to just where they need to be.
 
-Image perspective of the cards wasn't really straightforward. I battled between having differently sized cards while also drawing the images at variable sizes.
 
 
 Talking to a couple friends about the UX of the app led me to randomizing the answer possibilities for each selection in Quiz mode. They also pointed out Including the correct/incorrect message in the bottom right in the toolbar made it stand out more than being next to the other text in the sidebar.
